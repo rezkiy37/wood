@@ -19,7 +19,7 @@
 @mixin link-font-style($color, $fz, $fw, $td) {
     color: $color;
     font: {
-        family: $ffMain;
+        family: $ffSecondary;
         size: $fz;
         weight: $fw;
     }
