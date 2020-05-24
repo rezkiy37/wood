@@ -1,0 +1,40 @@
+@mixin font-style-light($ff, $fz, $fw) {
+    color: $cream;
+    font: {
+        family: $ff;
+        size: $fz;
+        weight: $fw;
+    }
+}
+
+@mixin font-style-dark($ff, $fz, $fw) {
+    color: $black;
+    font: {
+        family: $ff;
+        size: $fz;
+        weight: $fw;
+    }
+}
+
+@mixin link-font-style($color, $fz, $fw, $td) {
+    color: $color;
+    font: {
+        family: $ffMain;
+        size: $fz;
+        weight: $fw;
+    }
+
+    text-decoration: $td;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin flex ($jc, $ai, $flw) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-wrap: $flw;
+}
+
