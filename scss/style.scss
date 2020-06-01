@@ -12,3 +12,79 @@
 @import 'blocks/intro';
 @import 'blocks/header-aside';
 
+.test {
+
+    @include media('>767px') {
+        display: flex;
+    }
+
+    &__content {
+        flex: 0 0 100%;
+
+        & .container {
+            height: 100%;
+
+            background-color: skyblue;
+        }
+    }
+
+    &__body {
+        padding: 20px 0;
+
+        @include media('>767px') {
+            width: 40%;
+
+        padding: 30px 20px 20px 0;
+        }
+        
+    }
+
+    &__img {
+        position: relative;
+
+        & img {
+
+            @include media('>767px') {
+                width: 100%;
+                height: 100%;
+    
+                position: absolute;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+            }
+        }
+
+        @include media('>767px') {
+            padding-bottom: 45%;
+
+            flex: 0 0 calc(((100vw - 50px) * 0.6) + 25px);
+            
+            transform: translate(-100%, 0);
+        }
+
+        @include media('>1200px') {
+            flex: 0 0 calc(50vw - (0.4 - 0.5) * 1200px);
+        }
+    }
+
+    &__title {
+        margin-bottom: 40px;
+
+        font-size: calc(24px + 14 * (100vw / 1200));
+
+        @include media('<tablet') {
+            font-size: calc(24px + (14 + 14 * 0.7) * ((100vw - 320px) / 1200));
+        }
+    }
+
+    &__text {
+        line-height: 1.2;
+
+        font-size: calc(14px + 12 * (100vw / 1200));
+
+        @include media('<tablet') {
+            font-size: calc(14px + (12 + 12 * 0.7) * ((100vw - 320px) / 1200));
+        }
+    }
+}

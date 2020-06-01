@@ -1,9 +1,13 @@
-/* Header styles by Michael*/
+/* Intro styles by Michael*/
 @import '../mixins';
 @import '../vars';
+@import '../keyframes';
 
 // Intro
 .intro {
+    position: relative;
+
+    overflow: hidden;
 
     & .container {
         height: 100%;
@@ -11,18 +15,34 @@
         @include flex(center, center, nowrap);
 
         @include media('<568px') {
-            padding-top: 50px;
-
-            align-items: flex-start;
+            align-items: center;
         } 
     }
 
     &__inner {
         width: 100%;
+        height: 100%;
+
+        position: relative;
+
+        @include flex(center, center, nowrap);
+
+        @include media('<568px') {
+            padding-top: 100px;
+            align-items: flex-start;
+        } 
+
+        @include media('<350px') {
+            padding-top: 70px;
+        } 
+    }
+
+    &__content {
+        width: 100%;
 
         display: grid;
         grid-template-columns: repeat(3, 4fr);
-        grid-template-rows: repeat(4, 3fr);
+        grid-template-rows: repeat(2, 6fr);
 
         @include media('<568px') {
             grid-template-columns: repeat(1, 12fr);
@@ -32,8 +52,9 @@
     &__title {
         grid-column: 2 / 4;
 
-        @include font-style-light($ffMain, 100px, 700);
+        @include font-style-light($ffPrimary, 100px, 700);
         color: $dull;
+        line-height: 0.9;
         text-transform: uppercase;
 
         @include media('<568px') {
@@ -49,22 +70,28 @@
         color: $dull;
 
         @include media('<568px') {
+            height: 50px;
+
             grid-column: 1 / 2;
         } 
     }
 
     &__mouse-block {
-        grid-column: 2 / 3;
-        grid-row: 4 / 5;
+        @include flex(flex-start, flex-start, nowrap);
 
-        @include flex(flex-start, flex-end, nowrap);
-
-        position: relative;
+        position: absolute;
+        bottom: 130px;
+        left: 33.3%;
+        z-index: 1;
 
         cursor: pointer;
 
+        @include media('<=900px', 'landscape') {
+            left: -13px;
+        }
+
         @include media('<568px') {
-            grid-column: 1 / 2;
+            left: -13px;
         } 
     }
 
@@ -74,16 +101,28 @@
 
     &-arrow {
         width: 2px;
-        height: 75px;
+
+        margin-top: 40px;
 
         position: absolute;
-        bottom: -100px;
+        top: 100%;
         left: 31px;
         z-index: 1;
 
         cursor: pointer;
 
         background-color: $cream;
+
+        animation: anime-arrow .7s ease-out alternate infinite;
+
+        @include keyframes(anime-arrow) {
+            0% {
+                height: 75px;
+            }
+            100% {
+                height: 45px;
+            }
+        }
 
         &::before,
         &::after {

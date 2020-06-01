@@ -1,7 +1,63 @@
-/* Nav styles by Michael*/
+/* Header-aside styles by Michael*/
 @import '../mixins';
 @import '../vars';
 
-// .header {
+.header-aside {
+    height: 100vh;
 
-// }
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+    background-color: rgba(27, 18, 9, 0.8);
+
+    transition: all .2s ease-in-out;
+
+    &__nav {
+        height: 100%;
+
+        padding: 50px 0px;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__link {
+        margin-bottom: 30px;
+        padding: 10px 25px;
+
+        position: relative;
+
+        @include link-font-style($dull, $ffSecondary, 36px, 500, none);
+        text-transform: uppercase;
+
+        transition: all .2s ease;
+
+        &:hover:before {
+            width: 50%;
+        }
+
+        &:hover {
+            opacity: .9;
+        }
+
+        &:before {
+            width: 0;
+            height: 3px;
+
+            content: '';
+            position: absolute;
+            left: 25px;
+            bottom: 0;
+
+            background-color: $dull;
+            
+            transition: all .2s ease;
+        }
+
+        &:last-child {
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+    }
+}

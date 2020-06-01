@@ -16,10 +16,10 @@
     }
 }
 
-@mixin link-font-style($color, $fz, $fw, $td) {
+@mixin link-font-style($color, $ff, $fz, $fw, $td) {
     color: $color;
     font: {
-        family: $ffSecondary;
+        family: $ff;
         size: $fz;
         weight: $fw;
     }

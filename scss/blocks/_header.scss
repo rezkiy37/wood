@@ -26,7 +26,7 @@
 
         padding: 15px 10px;
 
-        @include flex(center, center, nowrap);
+        @include flex(center, flex-start, nowrap);
 
         position: absolute;
         top: 50%;
@@ -40,7 +40,15 @@
         @include media('<568px') {
             left: auto;
             right: 0;
-        } 
+        }
+
+        &:hover &__line::before {
+            width: 75%;
+        }
+
+        &:hover &__line::after {
+            width: 50%;
+        }
 
         &__line {
             width: 30px;
@@ -49,6 +57,8 @@
             position: relative;
 
             background-color: $brown-light;
+
+            transition: all .1s ease;
 
             &::before, 
             &::after {
@@ -61,14 +71,16 @@
                 z-index: 1;
 
                 background-color: $brown-light;
+
+                transition: all .2s ease;
             }
 
             &::before {
-                top: -8px;
+                top: 8px;
             }
 
             &::after {
-                top: 8px;
+                top: 16px;
             }
         }
     }
@@ -76,8 +88,14 @@
     &-title {
         grid-column: 3 / 4;
 
-        @include font-style-light($ffMain, 36px, 700);
+        @include link-font-style($cream ,$ffPrimary, 36px, 700, none);
         text-transform: uppercase;
+
+        transition: all .1s ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
 
         @include media('<laptop') {
             font-size: 34px;
@@ -114,10 +132,36 @@
         } 
 
         &__link {
-            @include link-font-style($cream, 16px, 500, none);
+            @include link-font-style($cream, $ffSecondary, 16px, 500, none);
             text-transform: uppercase;
 
+            position: relative;
+
             opacity: .7;
+
+            transition: all .2s ease-in;
+
+            &::before {
+                width: 0;
+                height: 2px;
+
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+
+                background-color: $cream;
+
+                transition: all .2s ease-in;
+            }
+
+            &:hover::before {
+                width: 100%;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
 
             @include media('<laptop') {
                 font-size: 14px;
