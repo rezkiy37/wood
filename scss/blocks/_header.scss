@@ -89,6 +89,7 @@
         grid-column: 3 / 4;
 
         @include link-font-style($cream ,$ffPrimary, 36px, 700, none);
+        @include adaptiv-font(36, 24); 
         text-transform: uppercase;
 
         transition: all .1s ease-in-out;
@@ -97,18 +98,8 @@
             transform: scale(1.05);
         }
 
-        @include media('<laptop') {
-            font-size: 34px;
-        }
-
-        @include media('<tablet') {
-            font-size: 32px;
-        }
-
         @include media('<568px') {
             grid-column: 2 / 3;
-
-            font-size: 30px;
 
             text-align: center;
         } 
@@ -133,6 +124,7 @@
 
         &__link {
             @include link-font-style($cream, $ffSecondary, 16px, 500, none);
+            @include adaptiv-font(16, 14); 
             text-transform: uppercase;
 
             position: relative;

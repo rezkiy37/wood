@@ -52,7 +52,10 @@
     &__title {
         grid-column: 2 / 4;
 
-        @include font-style-light($ffPrimary, 100px, 700);
+        @include font-style-light($ffPrimary, 10px, 700);
+
+        @include adaptiv-font(100, 72);
+
         color: $dull;
         line-height: 0.9;
         text-transform: uppercase;
@@ -68,6 +71,8 @@
         @include flex(flex-start, flex-end, nowrap);
 
         color: $dull;
+
+        @include adaptiv-font(28, 16); 
 
         @include media('<568px') {
             height: 50px;

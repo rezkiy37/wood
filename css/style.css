@@ -560,6 +560,7 @@ img {
   font-size: 36px;
   font-weight: 700;
   text-decoration: none;
+  font-size: calc(24px + 12 * ((100vw - 320px) / 880));
   text-transform: uppercase;
   -webkit-transition: all .1s ease-in-out;
   -o-transition: all .1s ease-in-out;
@@ -576,22 +577,9 @@ img {
   transform: scale(1.05);
 }
 
-@media (max-width: 1023px) {
-  .header-title {
-    font-size: 34px;
-  }
-}
-
-@media (max-width: 767px) {
-  .header-title {
-    font-size: 32px;
-  }
-}
-
 @media (max-width: 567px) {
   .header-title {
     grid-column: 2 / 3;
-    font-size: 30px;
     text-align: center;
   }
 }
@@ -636,6 +624,7 @@ img {
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
+  font-size: calc(14px + 2 * ((100vw - 320px) / 880));
   text-transform: uppercase;
   position: relative;
   opacity: .7;
@@ -759,8 +748,9 @@ img {
   grid-column: 2 / 4;
   color: #FCFCFC;
   font-family: "Oswald", sans-serif;
-  font-size: 100px;
+  font-size: 10px;
   font-weight: 700;
+  font-size: calc(72px + 28 * ((100vw - 320px) / 880));
   color: #BEA67C;
   line-height: 0.9;
   text-transform: uppercase;
@@ -786,6 +776,7 @@ img {
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   color: #BEA67C;
+  font-size: calc(16px + 12 * ((100vw - 320px) / 880));
 }
 
 @media (max-width: 567px) {
@@ -918,6 +909,7 @@ img {
   font-size: 36px;
   font-weight: 500;
   text-decoration: none;
+  font-size: calc(24px + 12 * ((100vw - 320px) / 880));
   text-transform: uppercase;
   -webkit-transition: all .2s ease;
   -o-transition: all .2s ease;
