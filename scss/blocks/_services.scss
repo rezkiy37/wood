@@ -1,0 +1,97 @@
+/* Services styles by Michael*/
+@import '../mixins';
+@import '../vars';
+
+.services {
+
+    &__content {
+        width: 100%;
+
+        @include flex(center, flex-start, wrap);
+    }
+
+    &__item {
+        width: 33.3%;
+
+        padding: 0 10px;
+
+        @include media('<=tablet') {
+            width: 100%;
+
+            margin-bottom: 50px;
+        }
+
+        &__header {
+            margin-bottom: 15px;
+
+            @include flex(space-between, center, nowrap);
+        }
+
+        &__svg {
+            order: 2;
+
+            &:hover {
+                animation: svg-click .8s ease-in-out 1;
+
+                @include keyframes(svg-click) {
+                    0% {
+                        transform: translateY(0);
+                    }
+                    30% {
+                        transform: translateY(-15px);
+                    }
+                    70% {
+                        transform: translateY(0px);
+                    }
+                    90% {
+                        transform: translateY(-3px);
+                    }
+                    100% {
+                        transform: translateY(0);
+                    }
+                }
+            }
+        }
+
+        &__inner {
+            padding: 20px 15px;
+
+            text-align: left;
+
+            cursor: pointer;
+
+            background-color: $dull;
+
+            box-shadow:
+                0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+                0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+                0 12.5px 10px rgba(0, 0, 0, 0.06),
+                0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+                0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+                0 100px 80px rgba(0, 0, 0, 0.12);
+            
+            border-radius: 3px;
+
+            transition: all .2s ease-in;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+
+        &__title {
+            order: 1;
+
+            @include font-style-dark($ffSecondary, 32px, 700);
+            @include adaptiv-font(28, 18);
+            text-transform: uppercase;
+        }
+
+        &__desc {
+            @include font-style-dark($ffSecondary, 32px, 700);
+            @include adaptiv-font(18, 14);
+
+            opacity: .65;
+        }
+    }
+}

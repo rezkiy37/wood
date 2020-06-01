@@ -9,6 +9,8 @@
     top: 0;
     z-index: 1000;
 
+    overflow: auto;
+
     background-color: rgba(27, 18, 9, 0.8);
 
     transition: all .2s ease-in-out;
@@ -29,7 +31,7 @@
         position: relative;
 
         @include link-font-style($dull, $ffSecondary, 36px, 500, none);
-        @include adaptiv-font(36, 24); 
+        @include adaptiv-font(28, 16); 
         text-transform: uppercase;
 
         transition: all .2s ease;
