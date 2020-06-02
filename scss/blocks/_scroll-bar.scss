@@ -1,0 +1,20 @@
+/* Scroll-bar styles by Michael*/
+@import '../mixins';
+@import '../vars';
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: $black;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: $brown-light;
+
+    border: 2px solid $brown-light;
+
+}
+

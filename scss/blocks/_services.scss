@@ -29,26 +29,22 @@
 
         &__svg {
             order: 2;
-
-            &:hover {
-                animation: svg-click .8s ease-in-out 1;
-
-                @include keyframes(svg-click) {
-                    0% {
-                        transform: translateY(0);
-                    }
-                    30% {
-                        transform: translateY(-15px);
-                    }
-                    70% {
-                        transform: translateY(0px);
-                    }
-                    90% {
-                        transform: translateY(-3px);
-                    }
-                    100% {
-                        transform: translateY(0);
-                    }
+                
+            @include keyframes(svg-click) {
+                0% {
+                    transform: translateY(0);
+                }
+                30% {
+                    transform: translateY(-15px);
+                }
+                70% {
+                    transform: translateY(0px);
+                }
+                90% {
+                    transform: translateY(-3px);
+                }
+                100% {
+                    transform: translateY(0);
                 }
             }
         }
@@ -74,6 +70,9 @@
 
             transition: all .2s ease-in;
 
+            &:hover .services__item__svg {
+                animation: svg-click .8s ease-in-out 1;
+            }
             &:hover {
                 transform: scale(1.02);
             }

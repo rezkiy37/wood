@@ -3,31 +3,52 @@ const headerBurger = document.querySelector('#headerBurger')
 
 headerBurger.addEventListener('click', () => {
     setTimeout(() => {
-        headerAsideOpen()
-    }, 201);
+        headerAsideOpen(true)
+    }, 200);
 })
 
 //header-aside
 const headerAside = document.querySelector('#headerAside')
 
-let headerAsideClose = () => {
-    body.classList.remove('no-scroll')
-    if (window.matchMedia("(max-width: 567px)").matches) {
-        headerAside.style.right = `-${headerAside.clientWidth + 7}px`
-    } else {
-        headerAside.style.left = `-${headerAside.clientWidth + 7}px`
+headerAside.addEventListener('click', e => console.log(e))
+
+let headerAsideClose = (noScroll = true) => {
+    if (noScroll) {
+        body.classList.remove('no-scroll')
     }
+
+    setTimeout(() => {
+        if (window.matchMedia("(max-width: 567px)").matches) {
+            headerAside.style.left = 'auto'
+            headerAside.style.right = `-${headerAside.offsetWidth}px`
+        }
+        else {
+            headerAside.style.right = 'auto'
+            headerAside.style.left = `-${headerAside.offsetWidth}px`
+        }
+    }, 100);
 }
-let headerAsideOpen = () => {
-    body.classList.add('no-scroll')
+
+let headerAsideOpen = (noScroll = true) => {
+    if (noScroll) {
+        body.classList.add('no-scroll')
+    }
+
     if (window.matchMedia("(max-width: 567px)").matches) {
+        headerAside.style.left = 'auto'
         headerAside.style.right = 0
-    } else {
+    }
+    else {
+        headerAside.style.right = 'auto'
         headerAside.style.left = 0
     }
 }
 
 headerAsideClose()
+
+addEventListener('resize', () => {
+    headerAsideClose(false)
+})
 
 let headerAsideLinks = document.querySelectorAll('.header-aside__link')
 

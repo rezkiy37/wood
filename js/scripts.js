@@ -13,3 +13,13 @@ body.style.paddingTop = `${headerHeight}px`
 //intro height
 main.style.height = `${window.innerHeight - headerHeight}px`
 
+addEventListener('resize', () => {
+    //headerHeight
+    let headerHeight = header.clientHeight
+
+    //body padding
+    body.style.paddingTop = `${headerHeight}px`
+
+    //intro height
+    main.style.height = `${window.innerHeight - headerHeight}px`
+})

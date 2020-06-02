@@ -533,6 +533,21 @@ img {
 }
 
 /* blocks */
+/* Scroll-bar styles by Michael*/
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F1010;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #b16100;
+  border: 2px solid #b16100;
+}
+
 /* Header styles by Michael*/
 .header {
   padding: 25px 0;
@@ -714,7 +729,7 @@ img {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -2px;
   background-color: #FCFCFC;
   -webkit-transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
@@ -1067,11 +1082,6 @@ img {
   order: 2;
 }
 
-.services__item__svg:hover {
-  -webkit-animation: svg-click .8s ease-in-out 1;
-  animation: svg-click .8s ease-in-out 1;
-}
-
 @-webkit-keyframes svg-click {
   0% {
     -webkit-transform: translateY(0);
@@ -1129,6 +1139,11 @@ img {
   -webkit-transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
   transition: all .2s ease-in;
+}
+
+.services__item__inner:hover .services__item__svg {
+  -webkit-animation: svg-click .8s ease-in-out 1;
+  animation: svg-click .8s ease-in-out 1;
 }
 
 .services__item__inner:hover {
