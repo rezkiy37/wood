@@ -464,7 +464,7 @@ body {
   font-family: "Oswald", sans-serif;
   font-size: 32px;
   font-weight: 700;
-  font-size: calc(24px + 24 * ((100vw - 320px) / 880));
+  font-size: calc(26px + 22 * ((100vw - 320px) / 880));
 }
 
 .section-title--dark::before {
@@ -476,7 +476,7 @@ body {
   font-family: "Oswald", sans-serif;
   font-size: 32px;
   font-weight: 700;
-  font-size: calc(24px + 24 * ((100vw - 320px) / 880));
+  font-size: calc(26px + 22 * ((100vw - 320px) / 880));
 }
 
 .section-title--light::before {
@@ -499,7 +499,7 @@ body {
   font-family: "Oswald", sans-serif;
   font-size: 32px;
   font-weight: 700;
-  font-size: calc(18px + 10 * ((100vw - 320px) / 880));
+  font-size: calc(16px + 10 * ((100vw - 320px) / 880));
 }
 
 .section-desc--light {
@@ -507,7 +507,7 @@ body {
   font-family: "Oswald", sans-serif;
   font-size: 32px;
   font-weight: 700;
-  font-size: calc(18px + 10 * ((100vw - 320px) / 880));
+  font-size: calc(16px + 10 * ((100vw - 320px) / 880));
 }
 
 .container {
@@ -530,6 +530,151 @@ img {
 
 .no-scroll {
   overflow: hidden;
+}
+
+/* Slider styles by Michael*/
+.slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .slider {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+.slider__item {
+  width: 33.3%;
+  padding: 0 10px;
+}
+
+@media (max-width: 1024px) {
+  .slider__item {
+    width: 50%;
+  }
+}
+
+.slider__item__inner {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.slider__item__inner:hover > .slider__item__content {
+  -webkit-animation: hover-slider-content .5s ease-in-out 1 alternate forwards;
+  animation: hover-slider-content .5s ease-in-out 1 alternate forwards;
+}
+
+.slider__item__inner:hover .slider__item__title::before {
+  width: 100%;
+}
+
+.slider__item__content {
+  width: 80%;
+  height: 50%;
+  padding: 15px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  overflow: hidden;
+  border-radius: 0 3px 3px 0;
+  background-color: rgba(190, 166, 124, 0.8);
+  -webkit-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+@-webkit-keyframes hover-slider-content {
+  0% {
+    width: 80%;
+    height: 50%;
+    bottom: 20%;
+  }
+  80% {
+    width: 100%;
+    bottom: 0;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+  }
+}
+
+@keyframes hover-slider-content {
+  0% {
+    width: 80%;
+    height: 50%;
+    bottom: 20%;
+  }
+  80% {
+    width: 100%;
+    bottom: 0;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+  }
+}
+
+.slider__item__title {
+  margin-bottom: 15px;
+  color: #FCFCFC;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #653700;
+  font-size: calc(20px + 8 * ((100vw - 320px) / 880));
+  position: relative;
+}
+
+.slider__item__title::before {
+  width: 50%;
+  height: 3px;
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  background-color: #653700;
+  -webkit-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.slider__item__desc {
+  color: #FCFCFC;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #321b00;
+  font-size: calc(12px + 4 * ((100vw - 320px) / 880));
+  text-align: left;
+  overflow: hidden;
+  -o-text-overflow: clip;
+  text-overflow: clip;
 }
 
 /* blocks */
@@ -968,7 +1113,8 @@ img {
   position: fixed;
   top: 0;
   z-index: 1000;
-  overflow: auto;
+  overflow-y: auto;
+  visibility: hidden;
   background-color: rgba(27, 18, 9, 0.8);
   -webkit-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
@@ -1173,6 +1319,7 @@ img {
   opacity: .65;
 }
 
+/* About styles by Michael*/
 @media (min-width: 768px) {
   .test {
     display: -webkit-box;

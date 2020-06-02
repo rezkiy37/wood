@@ -6,6 +6,7 @@
 @import 'mixins';
 @import 'keyframes';
 @import 'common';
+@import 'slider';
 
 /* blocks */
 @import 'blocks/scroll-bar';
@@ -13,6 +14,7 @@
 @import 'blocks/intro';
 @import 'blocks/header-aside';
 @import 'blocks/services';
+@import 'blocks/about';
 
 .test {
 

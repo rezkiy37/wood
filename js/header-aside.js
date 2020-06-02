@@ -7,12 +7,15 @@ headerBurger.addEventListener('click', () => {
     }, 200);
 })
 
+
 //header-aside
 const headerAside = document.querySelector('#headerAside')
 
 headerAside.addEventListener('click', e => console.log(e))
 
 let headerAsideClose = (noScroll = true) => {
+    body.style.paddingRight = 0
+
     if (noScroll) {
         body.classList.remove('no-scroll')
     }
@@ -30,6 +33,8 @@ let headerAsideClose = (noScroll = true) => {
 }
 
 let headerAsideOpen = (noScroll = true) => {
+    headerAside.style.visibility = 'visible'
+
     if (noScroll) {
         body.classList.add('no-scroll')
     }
@@ -39,6 +44,7 @@ let headerAsideOpen = (noScroll = true) => {
         headerAside.style.right = 0
     }
     else {
+        body.style.paddingRight = '8px'
         headerAside.style.right = 'auto'
         headerAside.style.left = 0
     }

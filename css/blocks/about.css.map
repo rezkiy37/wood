@@ -1,0 +1,1 @@
+{"version":3,"sources":["blocks/about.scss"],"names":[],"mappings":"AAAA,2BAAA","file":"about.css","sourcesContent":["/* About styles by Michael*/\r\n@import '../mixins';\r\n@import '../vars';"]}
