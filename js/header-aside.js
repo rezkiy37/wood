@@ -75,4 +75,7 @@ body.addEventListener('click', e => {
     }
 })
 
+addEventListener("scroll", function () {
+    headerAsideClose()
+});
 

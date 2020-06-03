@@ -499,7 +499,7 @@ body {
   font-family: "Oswald", sans-serif;
   font-size: 32px;
   font-weight: 700;
-  font-size: calc(14px + 12 * ((100vw - 320px) / 880));
+  font-size: calc(14px + 8 * ((100vw - 320px) / 880));
 }
 
 .section-desc--light {
@@ -507,7 +507,7 @@ body {
   font-family: "Oswald", sans-serif;
   font-size: 32px;
   font-weight: 700;
-  font-size: calc(14px + 12 * ((100vw - 320px) / 880));
+  font-size: calc(14px + 8 * ((100vw - 320px) / 880));
 }
 
 .container {
