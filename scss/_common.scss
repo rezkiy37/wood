@@ -88,12 +88,12 @@ body {
 
         &--dark {
             @include font-style-dark($ffPrimary, 32px, 700);
-            @include adaptiv-font(26, 16); 
+            @include adaptiv-font(26, 14); 
         }
 
         &--light {
             @include font-style-light($ffPrimary, 32px, 700);
-            @include adaptiv-font(26, 16); 
+            @include adaptiv-font(26, 14); 
         }
     }
 }
