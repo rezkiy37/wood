@@ -1162,6 +1162,9 @@ img {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
 }
 
 .header-aside__link {
@@ -1206,7 +1209,6 @@ img {
 }
 
 .header-aside__link:last-child {
-  margin-top: auto;
   margin-bottom: 0;
 }
 
