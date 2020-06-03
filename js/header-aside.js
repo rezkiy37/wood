@@ -15,6 +15,7 @@ headerAside.addEventListener('click', e => console.log(e))
 
 let headerAsideClose = (noScroll = true) => {
     body.style.paddingRight = 0
+    document.querySelector('#header').style.paddingRight = 0
 
     if (noScroll) {
         body.classList.remove('no-scroll')
@@ -45,6 +46,7 @@ let headerAsideOpen = (noScroll = true) => {
     }
     else {
         body.style.paddingRight = '8px'
+        document.querySelector('#header').style.paddingRight = '8px'
         headerAside.style.right = 'auto'
         headerAside.style.left = 0
     }
