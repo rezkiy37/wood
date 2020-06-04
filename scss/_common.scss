@@ -96,6 +96,20 @@ body {
             @include adaptiv-font(22, 14); 
         }
     }
+
+    &-text {
+        opacity: .65;
+        
+        &--dark {
+            @include font-style-dark($ffSecondary, 32px, 700);
+            @include adaptiv-font(18, 14); 
+        }
+
+        &--light {
+            @include font-style-light($ffPrimary, 32px, 700);
+            @include adaptiv-font(22, 14); 
+        }
+    }
 }
 
 .container {
