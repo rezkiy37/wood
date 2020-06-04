@@ -78,6 +78,10 @@
     }
 
     &__picture {
+        overflow: hidden;
+
+        position: relative;
+
         @include media('>=tablet') {
             padding-bottom: 40%;
 
@@ -101,10 +105,110 @@
                 top: 0;
                 left: 0;
                 object-fit: cover;
+
+                transition: all .3s linear;
+            }
+        }
+
+        &.active img {
+            @include media('>=tablet') {
+                transform: scale(1.1);
             }
         }
     }
 
+    &__desc {
+        width: 50%;
+
+        padding: 15px 20px;
+
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+
+        overflow: hidden;
+
+        border-radius: 3px 3px 0 0;
+        background-color: rgba(190, 166, 124, 0.9);
+
+        cursor: pointer;
+
+        transition: all .4s ease-in-out;
+
+        @include media('<laptop') {
+            padding: 10px 15px;
+        }
+
+        @include media('<tablet') {
+            padding: 8px 10px;
+        }
+
+        & .services__item__title {
+            @include adaptiv-font(26, 18);
+            white-space: nowrap;
+
+            @include media('<=m') {
+                font-size: 16px !important;
+            }
+
+            @include media('<=s') {
+                font-size: 15px !important;
+            }
+        }
+
+        & .section-text {
+            @include adaptiv-font(18, 12);
+
+            @include media('<=m') {
+                font-size: 13px !important;
+            }
+
+            @include media('<=s') {
+                font-size: 11px !important;
+            }
+        }
+
+        &__list {
+            margin-top: 50px !important;
+
+            @include media('<laptop') {
+                margin-top: 30px !important;
+            }
     
+            @include media('<tablet') {
+                margin-top: 15px !important; 
+            }
+        }
+
+        &__item {
+            margin-top: 20px;
+            padding: 5px 0;
+
+            border-bottom: 2px dotted $brown;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+
+            &-title {
+                @include font-style-dark($ffSecondary, 16px, 700);
+                @include adaptiv-font(22, 14);
+                letter-spacing: 1px;
+                white-space: nowrap;
+            }
+
+            &-text {
+                @include font-style-dark($ffSecondary, 16px, 700);
+                color: hsla(40, 100%, 12%, 1);
+                @include adaptiv-font(16, 10);
+                font-weight: 400;
+                line-height: 1.5;
+                
+            }
+        }
+    }
 }
 
+#quoteheader {
+    padding: 15px 0;
+}

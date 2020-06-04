@@ -573,6 +573,7 @@ img {
 
 .slider-controller {
   width: 100%;
+  height: 30px;
   margin-top: 30px;
   padding: 0 10px;
   display: -webkit-box;
@@ -1459,6 +1460,11 @@ img {
   transform: scale(1.01);
 }
 
+.quote__picture {
+  overflow: hidden;
+  position: relative;
+}
+
 @media (min-width: 768px) {
   .quote__picture {
     padding-bottom: 40%;
@@ -1489,7 +1495,129 @@ img {
     left: 0;
     -o-object-fit: cover;
     object-fit: cover;
+    -webkit-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
   }
+}
+
+@media (min-width: 768px) {
+  .quote__picture.active img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+.quote__desc {
+  width: 50%;
+  padding: 15px 20px;
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  overflow: hidden;
+  border-radius: 3px 3px 0 0;
+  background-color: rgba(190, 166, 124, 0.9);
+  cursor: pointer;
+  -webkit-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+@media (max-width: 1023px) {
+  .quote__desc {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .quote__desc {
+    padding: 8px 10px;
+  }
+}
+
+.quote__desc .services__item__title {
+  font-size: calc(18px + 8 * ((100vw - 320px) / 880));
+  white-space: nowrap;
+}
+
+@media (max-width: 375px) {
+  .quote__desc .services__item__title {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .quote__desc .services__item__title {
+    font-size: 15px !important;
+  }
+}
+
+.quote__desc .section-text {
+  font-size: calc(12px + 6 * ((100vw - 320px) / 880));
+}
+
+@media (max-width: 375px) {
+  .quote__desc .section-text {
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .quote__desc .section-text {
+    font-size: 11px !important;
+  }
+}
+
+.quote__desc__list {
+  margin-top: 50px !important;
+}
+
+@media (max-width: 1023px) {
+  .quote__desc__list {
+    margin-top: 30px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .quote__desc__list {
+    margin-top: 15px !important;
+  }
+}
+
+.quote__desc__item {
+  margin-top: 20px;
+  padding: 5px 0;
+  border-bottom: 2px dotted #1b1209;
+}
+
+.quote__desc__item:last-child {
+  border-bottom: 0;
+}
+
+.quote__desc__item-title {
+  color: #0F1010;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  font-size: calc(14px + 8 * ((100vw - 320px) / 880));
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.quote__desc__item-text {
+  color: #0F1010;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #3d2900;
+  font-size: calc(10px + 6 * ((100vw - 320px) / 880));
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+#quoteheader {
+  padding: 15px 0;
 }
 
 /*# sourceMappingURL=style.css.map */
