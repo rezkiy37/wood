@@ -5,12 +5,16 @@ let sliderItem = document.querySelector('.slider__item__inner')
 
 size().then(function (size) {
     sliderHover(size)
+
+    $('.gallery__slider').slick('setPosition');
 })
 
 addEventListener('resize', () => {
     size().then(function (size) {
         sliderHover(size)
     })
+
+    $('.gallery__slider').slick('setPosition');
 })
 
 let sliderHover = (size) => {
@@ -26,6 +30,8 @@ let sliderHover = (size) => {
             item.classList.remove('hover')
         })
     })
+
+    $('.gallery__slider').slick('setPosition');
 }
 
 function size() {

@@ -788,6 +788,12 @@ img {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   cursor: pointer;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-transition: opacity .2s linear;
+  -o-transition: opacity .2s linear;
+  transition: opacity .2s linear;
 }
 
 @media (max-width: 567px) {
@@ -868,7 +874,8 @@ img {
 }
 
 .header-nav {
-  grid-column: 4 / 6;
+  padding-right: 15%;
+  grid-column: 4 / 7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -882,16 +889,9 @@ img {
   flex-wrap: nowrap;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
   .header-nav {
-    grid-column-end: 7;
-  }
-}
-
-@media (max-width: 767px) {
-  .header-nav {
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
+    padding-right: 0;
   }
 }
 
@@ -902,6 +902,7 @@ img {
 }
 
 .header-nav__link {
+  padding: 5px 7px;
   color: #FCFCFC;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
@@ -949,7 +950,7 @@ img {
 
 @media (max-width: 767px) {
   .header-nav__link {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 
@@ -1166,11 +1167,79 @@ img {
   top: 0;
   z-index: 1000;
   overflow-y: auto;
+  overflow-x: hidden;
   visibility: hidden;
   background-color: rgba(27, 18, 9, 0.8);
   -webkit-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
+}
+
+.header-aside-burger {
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  z-index: 1;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  cursor: pointer;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+@media (max-width: 567px) {
+  .header-aside-burger {
+    top: 15px;
+    right: 0;
+  }
+}
+
+.header-aside-burger:hover {
+  -webkit-transform: rotate(45deg) scale(1.1);
+  -ms-transform: rotate(45deg) scale(1.1);
+  transform: rotate(45deg) scale(1.1);
+}
+
+.header-aside-burger__line {
+  width: 30px;
+  height: 1px;
+  position: relative;
+  background-color: #b16100;
+  -webkit-transition: all .1s ease;
+  -o-transition: all .1s ease;
+  transition: all .1s ease;
+}
+
+.header-aside-burger__line::before, .header-aside-burger__line::after {
+  width: 100%;
+  height: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  background-color: #b16100;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 .header-aside__nav {
@@ -1188,9 +1257,30 @@ img {
   justify-content: space-evenly;
 }
 
+@media (max-width: 767px) {
+  .header-aside__nav {
+    padding: 35px 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .header-aside__nav {
+    padding: 25px 0;
+  }
+}
+
+@media (max-width: 849px) and (orientation: landscape) {
+  .header-aside__nav {
+    padding: 0;
+    padding-top: 60px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
 .header-aside__link {
-  margin-bottom: 30px;
-  padding: 10px 25px;
+  padding: 20px 25px;
   position: relative;
   color: #BEA67C;
   font-family: "Montserrat", sans-serif;
@@ -1486,6 +1576,12 @@ img {
   }
 }
 
+.quote__picture img {
+  -webkit-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
 @media (min-width: 768px) {
   .quote__picture img {
     width: 100%;
@@ -1501,12 +1597,10 @@ img {
   }
 }
 
-@media (min-width: 768px) {
-  .quote__picture.active img {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-  }
+.quote__picture.active img {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .quote__desc {

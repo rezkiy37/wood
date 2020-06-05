@@ -22,6 +22,10 @@ let headerAsideClose = (noScroll = true) => {
     }
 
     setTimeout(() => {
+        headerBurger.style.opacity = 1
+    }, 350);
+
+    setTimeout(() => {
         if (window.matchMedia("(max-width: 567px)").matches) {
             headerAside.style.left = 'auto'
             headerAside.style.right = `-${headerAside.offsetWidth}px`
@@ -35,6 +39,7 @@ let headerAsideClose = (noScroll = true) => {
 
 let headerAsideOpen = (noScroll = true) => {
     headerAside.style.visibility = 'visible'
+    headerBurger.style.opacity = 0
 
     if (noScroll) {
         body.classList.add('no-scroll')
@@ -55,7 +60,7 @@ let headerAsideOpen = (noScroll = true) => {
 headerAsideClose()
 
 addEventListener('resize', () => {
-    headerAsideClose(false)
+    headerAsideClose(true)
 })
 
 let headerAsideLinks = document.querySelectorAll('.header-aside__link')
@@ -78,4 +83,6 @@ body.addEventListener('click', e => {
 addEventListener("scroll", function () {
     headerAsideClose()
 });
+
+
 
