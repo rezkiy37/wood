@@ -25,3 +25,17 @@ addEventListener('resize', () => {
 })
 
 
+let lastPosition = 0
+
+addEventListener('scroll', () => {
+    if (lastPosition > window.scrollY) {
+        lastPosition = window.scrollY
+
+        header.style.transform = 'translateY(0)'
+    }
+    else if (lastPosition < window.scrollY) {
+        lastPosition = window.scrollY
+
+        header.style.transform = 'translateY(-100%)'
+    }
+})

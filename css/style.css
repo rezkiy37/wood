@@ -752,6 +752,9 @@ img {
   top: 0;
   left: 0;
   z-index: 999;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .header__inner {
