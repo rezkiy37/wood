@@ -10,15 +10,16 @@ quoteDesc.style.height = `${quoteHeight + 20}px`
 
 quoteDesc.classList.add('passive')
 
-if (quoteDesc.classList.contains('passive')) {
-    setInterval(() => {
-        quoteDesc.style.height = `${quoteHeight + 30}px`
 
-        setTimeout(() => {
-            quoteDesc.style.height = `${quoteHeight + 20}px`
-        }, 1500);
-    }, 2500);
-}
+
+const quoteBumble = setInterval(() => {
+    quoteDesc.style.height = `${quoteHeight + 30}px`
+
+    setTimeout(() => {
+        quoteDesc.style.height = `${quoteHeight + 20}px`
+    }, 1500);
+}, 2500)
+
 
 addEventListener('resize', () => {
     let quoteHeight = quoteheader.offsetHeight
@@ -33,6 +34,10 @@ quoteDesc.addEventListener('mouseover', e => {
     quoteDesc.classList.remove('passive')
     quoteDesc.style.overflowY = 'auto'
     quoteDesc.style.height = '95%'
+
+    if (!quoteDesc.classList.contains('passive')) {
+        clearInterval(quoteBumble)
+    }
 })
 
 quoteDesc.addEventListener('mouseleave', e => {

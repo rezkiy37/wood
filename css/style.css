@@ -646,10 +646,17 @@ img {
   bottom: 0;
   z-index: 2;
   border-radius: 3px;
+  overflow-y: auto;
 }
 
 .slider__item__inner.hover .slider__item__title::before {
   width: 100%;
+}
+
+.slider__item__inner.hover .slider__item__desc {
+  width: 95%;
+  display: block;
+  overflow: hidden;
 }
 
 .slider__item__inner.hover .slider__item__img {
@@ -718,8 +725,11 @@ img {
   font-size: calc(12px + 4 * ((100vw - 320px) / 880));
   text-align: left;
   overflow: hidden;
-  -o-text-overflow: clip;
-  text-overflow: clip;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .slider__item__img {

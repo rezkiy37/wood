@@ -77,10 +77,20 @@
                 z-index: 2;
 
                 border-radius: 3px;
+
+                overflow-y: auto;
             }
 
             &.hover .slider__item__title::before {
                 width: 100%;
+            }
+
+            &.hover .slider__item__desc {
+                width: 95%;
+
+                display: block;
+
+                overflow: hidden;
             }
 
             &.hover .slider__item__img {
@@ -140,8 +150,12 @@
             @include adaptiv-font(16, 12);
 
             text-align: left;
+
             overflow: hidden;
-            text-overflow: clip;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
         }
 
         &__img {
