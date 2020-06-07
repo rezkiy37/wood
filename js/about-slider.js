@@ -5,16 +5,12 @@ let sliderItem = document.querySelector('.slider__item__inner')
 
 size().then(function (size) {
     sliderHover(size)
-
-    $('.gallery__slider').slick('setPosition');
 })
 
 addEventListener('resize', () => {
     size().then(function (size) {
         sliderHover(size)
     })
-
-    $('.gallery__slider').slick('setPosition');
 })
 
 let sliderHover = (size) => {
@@ -31,7 +27,7 @@ let sliderHover = (size) => {
         })
     })
 
-    $('.gallery__slider').slick('setPosition');
+    $('.gallery__slider').slick('setPosition')
 }
 
 function size() {
@@ -50,7 +46,8 @@ $('#aboutSlider').slick({
     slidesToScroll: 1,
     arrows: true,
     speed: 250,
-    appendArrows: '.slider-controller',
+    appendArrows: '#aboutSliderController',
+
     responsive: [
         {
             breakpoint: 1024,

@@ -1,0 +1,75 @@
+/* Goods styles by Michael*/
+@import '../mixins';
+@import '../vars';
+
+.goods {
+
+    &__nav {
+        margin: 0 auto;
+        margin-bottom: 50px;
+
+        @include flex(center, center, nowrap);
+        
+        @include media('<tablet') {
+            margin-bottom: 35px;
+        }
+        @include media('<=578px') {
+            justify-content: space-between;
+        }
+    }
+
+    &__link {
+        margin: 0 10px;
+        padding: 5px 10px;
+
+        @include link-font-style($cream, $ffSecondary, 18px, 500, none);
+        @include adaptiv-font(18, 14);
+        text-transform: uppercase;
+
+        position: relative;
+
+        opacity: .7;
+
+        transition: .2s ease;
+
+        @include media('<tablet') {
+            margin: 0 5px;
+            padding: 5px 5px;
+        }
+
+        @include media('<=578px') {
+            margin: 0 0;
+            padding: 5px 5px;
+        }
+
+        &.hover {
+            opacity: 1;
+        }
+
+        &.hover::before {
+            width: 50%;
+        }
+
+        &.active {
+            opacity: 1;
+        }
+
+        &.active::before {
+            width: 100%;
+        }
+
+        &::before {
+            width: 0;
+            height: 2px;
+
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+
+            background-color: $cream;
+
+            transition: all .2s ease-in;
+        }
+    }
+}
